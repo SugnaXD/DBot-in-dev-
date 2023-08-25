@@ -21,4 +21,5 @@ No one is controbuting to the project as of yet.
 
 ## License
 [MIT](https://github.com/SugnaXD/DBot/blob/main/LICENSE)
-...
+
+---
