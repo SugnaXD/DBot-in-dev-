@@ -1,2 +1,26 @@
-# DBot
-A funny Discord bot im making to break or have 
+# My Project
+
+---
+
+## Installation
+Sources:
+https://discordjs.guide/preparations/
+...
+Use the discordjs.guide to setup the node_modules
+---
+
+## Usage
+
+...
+
+---
+
+## Contributing
+
+...
+
+---
+
+## License
+
+...
