@@ -4,8 +4,7 @@ since they have a large [github repository](https://github.com/discordjs/guide/t
 ---
 
 ## Installation
-Sources: [Discord.js Guides](https://discordjs.guide/preparations/)
-Discordjs.guide has guides on setting up the basic node_modules if I start using diffrent Node Modules then I will make a seperate folder in the future.
+Sources: [Discord.js Guides](https://discordjs.guide/preparations/) has guides on setting up the basic node_modules if I start using diffrent Node Modules then I will make a seperate folder in the future.
 
 ---
 
