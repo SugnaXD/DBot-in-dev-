@@ -1,5 +1,5 @@
 # My Project
-Hellooooo this bot has been a project of mine since April/23, Kathund (https://github.com/Kathund) was the first person that helped me making most of this code so thanks to him, I also got most of the code from discordjs.guides
+Hellooooo this bot has been a project of mine since April/23, [Kathund](https://github.com/Kathund) was the first person that helped me making most of this code so thanks to him, I also got most of the code from discordjs.guides
 since they have a large github repository and website to help you make your first bot so again thanks to them I'm able to do this project of mine.
 ---
 
