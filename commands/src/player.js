@@ -19,6 +19,43 @@ class Player {
     console.log(`Player name changed to ${newName}`);
   }
 
+  chooseRace(race, discordUserId) {
+    const requiredDiscordUserId = 'your_specific_discord_user_id';
+  
+    if (race === 'Orc' && discordUserId !== requiredDiscordUserId) {
+      console.log(`Only players with the specific Discord user ID can choose the Orc race.`);
+      return;
+    }
+    switch (race) {
+      case 'Human':
+        this.health += 10;
+        this.damage += 5;
+        this.armor -= 2;
+        console.log(`${this.name} is a Human. Health +10, Damage +5, Armor -2.`);
+        break;
+      case 'Elf':
+        this.health -= 5;
+        this.damage += 10;
+        this.armor += 2;
+        console.log(`${this.name} is an Elf. Health -5, Damage +10, Armor +2.`);
+        break;
+      case 'Dwarf':
+        this.health += 15;
+        this.damage -= 5;
+        this.armor += 5;
+        console.log(`${this.name} is a Dwarf. Health +15, Damage -5, Armor +5.`);
+        break;
+      case 'Orc':
+        this.health += 20;
+        this.damage -= 15;
+        this.armor += 10;
+        console.log(`${this.name} is an Orc. Health +20, Damage -15, Armor +10.`);
+        break;
+      default:
+        console.log(`${this.name} has chosen an invalid race.`);
+    }
+  }
+
   gainExperience(amount) {
     this.experience += amount;
     console.log(`${this.name} gained ${amount} experience points.`);
@@ -73,24 +110,25 @@ class Player {
         this.health += 10;
         this.damage += 5;
         this.armor -= 2;
-        console.log(`${this.name} is a Human. Health +10, Damage +5, Armor -2.`);
         break;
-      case 'Elf':
-        this.health -= 5;
-        this.damage += 10;
-        this.armor += 2;
-        console.log(`${this.name} is an Elf. Health -5, Damage +10, Armor +2.`);
-        break;
-      case 'Dwarf':
-        this.health += 15;
-        this.damage -= 5;
-        this.armor += 5;
-        console.log(`${this.name} is a Dwarf. Health +15, Damage -5, Armor +5.`);
-        break;
-      default:
-        console.log(`${this.name} has chosen an invalid race.`);
+        case 'Elf':
+          this.health -= 5;
+          this.damage += 10;
+          this.armor += 2;
+          break;
+        case 'Dwarf':
+          this.health += 15;
+          this.damage -= 5;
+          this.armor += 5;
+          break;
+        case 'Orc':
+          this.health += 20;
+          this.damage -= 15;
+          this.armor += 10;
+          break;
+        default:
+          console.log(`${this.name} has chosen an invalid race.`);
+          
     }
   }
 }
-
-module.exports = Player;

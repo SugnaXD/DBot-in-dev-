@@ -39,7 +39,7 @@ class Floor {
 
   generateEnemies() {
     // Generate regular enemies based on the floor level
-    const numEnemies = this.level * 3; // Adjust the number of enemies as needed
+    const numEnemies = this.level * 10; // Adjust the number of enemies as needed
 
     for (let i = 1; i <= numEnemies; i++) {
       const enemyName = `Enemy ${i}`;

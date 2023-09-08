@@ -19,8 +19,15 @@ function startGame() {
     const boss1 = new Boss('Floor 1 Boss', 1000, 50, 'Spear Throw');
     const miniboss1 = new MiniBoss('Floor 1 Mini Boss', 500, 30, 'DaggerSlash');
 
-    // Create a floor with the boss and miniboss
+    // Create a boss and miniboss for the second floor
+    const boss2 = new Boss('Floor 2 Boss', 1500, 70, 'Fireball');
+    const miniboss2 = new MiniBoss('Floor 2 Mini Boss', 800, 40, 'Ice Slash');
+
+    // Create the first floor with the boss and miniboss
     const floor1 = new Floor(1, boss1, miniboss1);
+
+    // Create the second floor with the boss and miniboss
+    const floor2 = new Floor(2, boss2, miniboss2);
 
     // Simulate fighting enemies on the first floor
     for (let i = 0; i < 20; i++) {
@@ -36,6 +43,24 @@ function startGame() {
           player.increaseDamage(5);
         }
       }
+      console.log(`Enemy defeated! Player health: ${player.health}`);
+    }
+
+    // Simulate fighting enemies on the second floor
+    for (let i = 0; i < 20; i++) {
+      const enemy = floor2.fightEnemy();
+      player.gainExperience(75);
+
+      if (enemy) {
+        if (enemy.dropArmor()) {
+          player.increaseHealth(10);
+        }
+
+        if (enemy.dropWeapon()) {
+          player.increaseDamage(5);
+        }
+      }
+      console.log(`Enemy defeated! Player health: ${player.health}`);
     }
 
     // Allow the player to change their name
