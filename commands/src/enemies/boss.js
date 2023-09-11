@@ -1,4 +1,4 @@
-const Enemy = require('./enemy');
+const Enemy = require('./enemy.js');
 
 class Boss extends Enemy {
   constructor(name, health, damage, loot, bossArmor) {

@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { readPlayerData, writePlayerData } = require('./dataHandling');
+const { readPlayerData, writePlayerData } = require('./dataHandling.js');
 
 module.exports = {
   data: new SlashCommandBuilder()

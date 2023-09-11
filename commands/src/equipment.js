@@ -2,14 +2,14 @@
 /* eslint-disable no-unused-vars */
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { Client, Intents } = require('discord.js');
-const { createLeaderboardCommand, execute } = require('./leaderboard');
+const { createLeaderboardCommand, execute } = require('./leaderboard.js');
 const readline = require('readline');
 const fs = require('fs');
 const Player = require('./player.js');
 const Floor = require('./floor/floor.js');
 const Boss = require('./enemies/boss.js');
 const MiniBoss = require('./enemies/minibos.js');
-const Inventory = require('./inventoryjs');
+const Inventory = require('./inventory.js');
 
 const config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
 
