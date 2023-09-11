@@ -1,27 +1,28 @@
 const fs = require('fs');
 
-// Read player data from file
-function readPlayerData() {
+function readDataFromFile(filename) {
   try {
-    const data = fs.readFileSync('playerData.json', 'utf8');
+    const data = fs.readFileSync(filename, 'utf8');
     return JSON.parse(data);
   } catch (error) {
-    console.error('Error reading player data:', error);
+    console.error(`Error reading data from file: ${error}`);
     return null;
   }
 }
 
-// Write player data to file
-function writePlayerData(playerData) {
+function writeDataToFile(filename, data) {
   try {
-    fs.writeFileSync('playerData.json', JSON.stringify(playerData));
-    console.log('Player data saved successfully.');
+    const jsonData = JSON.stringify(data);
+    fs.writeFileSync(filename, jsonData, 'utf8');
+    console.log('Data written to file successfully');
   } catch (error) {
-    console.error('Error writing player data:', error);
+    console.error(`Error writing data to file: ${error}`);
   }
 }
 
 module.exports = {
-  readPlayerData,
-  writePlayerData,
+  execute: function() {
+  },
+  readDataFromFile,
+  writeDataToFile,
 };

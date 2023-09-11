@@ -1,3 +1,6 @@
+const roundedNumber = Math.floor(5.7);
+console.log(roundedNumber); // Output: 5
+
 class Enemy {
   constructor(name, health, damage, xpGain) {
     this.name = name;
@@ -19,8 +22,7 @@ class Floor {
   }
 
   generateEnemies() {
-    // Generate regular enemies based on the floor level
-    const numEnemies = this.level * 3; // Adjust the number of enemies as needed
+    const numEnemies = this.level * 3; 
 
     for (let i = 1; i <= numEnemies; i++) {
       const enemyName = `Enemy ${i}`;
@@ -35,13 +37,11 @@ class Floor {
   fightBoss() {
     console.log(`Fighting boss on floor ${this.level}...`);
     this.boss.useSpecialAbility();
-    // Logic for fighting the boss
   }
 
   fightMiniBoss() {
     console.log(`Fighting mini-boss on floor ${this.level}...`);
     this.miniboss.dropLoot();
-    // Logic for fighting the mini-boss
   }
 }
 

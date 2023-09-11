@@ -9,7 +9,6 @@ class MiniBoss extends Enemy {
 
   dropLoot() {
     console.log(`${this.name} dropped ${this.loot}!`);
-    // Logic for the mini boss's loot drop
   }
 
   dropArmor(player) {

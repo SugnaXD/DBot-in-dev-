@@ -1,8 +1,8 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { readPlayerData, writePlayerData } = require('../src/dataHandling');
+const { readPlayerData, writePlayerData } = require('./dataHandling.js');
 
 // The user ID to allow for the command
-const allowedUserId = 'YOUR_USER_ID';
+const allowedUserId = '603554299485880331';
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -21,17 +21,14 @@ module.exports = {
         .setDescription('The amount of XP to add')
         .setRequired(true)),
   async execute(interaction) {
-    // Check if the user executing the command has the allowed user ID
     if (interaction.user.id !== allowedUserId) {
       return interaction.reply('You are not authorized to use this command.');
     }
 
-    // Get the amount of damage, health, and XP from the command options
     const damage = interaction.options.getInteger('damage');
     const health = interaction.options.getInteger('health');
     const xp = interaction.options.getInteger('xp');
 
-    // Get the player data
     const playerData = readPlayerData() || {};
 
     // Update the player's stats
@@ -40,10 +37,8 @@ module.exports = {
     playerData[allowedUserId].health = (playerData[allowedUserId].health || 0) + health;
     playerData[allowedUserId].xp = (playerData[allowedUserId].xp || 0) + xp;
 
-    // Save the updated player data
     writePlayerData(playerData);
 
-    // Send a reply to the user
     await interaction.reply('Stats added successfully!');
   },
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 class Player {
   constructor(name, race) {
     this.name = name;
@@ -10,7 +11,6 @@ class Player {
     this.lastDefeatedEnemy = null;
     this.race = race;
 
-    // Apply race pros and cons
     this.applyRaceEffects();
   }
 
@@ -20,7 +20,7 @@ class Player {
   }
 
   chooseRace(race, discordUserId) {
-    const requiredDiscordUserId = 'your_specific_discord_user_id';
+    const requiredDiscordUserId = '603554299485880331';
   
     if (race === 'Orc' && discordUserId !== requiredDiscordUserId) {
       console.log(`Only players with the specific Discord user ID can choose the Orc race.`);
@@ -90,7 +90,6 @@ class Player {
 
   defeatEnemy(enemy) {
     this.lastDefeatedEnemy = enemy;
-    // Logic for defeating an enemy
   }
 
   idleXP() {
@@ -104,7 +103,6 @@ class Player {
   }
 
   applyRaceEffects() {
-    // Apply race pros and cons based on the chosen race
     switch (this.race) {
       case 'Human':
         this.health += 10;

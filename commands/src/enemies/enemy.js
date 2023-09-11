@@ -3,7 +3,7 @@ class Enemy {
     this.name = name;
     this.health = health;
     this.damage = damage;
-    this.xpGain = xpGain; // XP gain for defeating this enemy
+    this.xpGain = xpGain; 
     this.enemyArmor = enemyArmor;
   }
 
