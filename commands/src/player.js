@@ -10,6 +10,7 @@ class Player {
     this.armor = 0;
     this.lastDefeatedEnemy = null;
     this.race = race;
+    this.speed=10;
 
     this.applyRaceEffects();
   }
@@ -30,7 +31,7 @@ class Player {
       case 'Human':
         this.health += 10;
         this.damage += 5;
-        this.armor -= 2;
+        this.armor -= 2;  
         console.log(`${this.name} is a Human. Health +10, Damage +5, Armor -2.`);
         break;
       case 'Elf':
@@ -64,12 +65,27 @@ class Player {
       this.levelUp();
     }
   }
+  fightEnemy(enemy) {
+    if (enemy.speed > this.speed) {
+      this.health -= enemy.damage;
+      if (this.health <= 0) {
+        return;
+      }
+    }
+
+    enemy.health -= this.damage;
+
+    if (enemy.health <= 0) {
+      this.gainExperience(enemy.xpGain);
+    }
+  }
 
   levelUp() {
     this.level++;
     this.experience = 0;
-    this.nextLevelExperience *= 1.5;
-    this.health += 20;
+    this.nextLevelExperience *= 1.25;
+    this.health += 10;
+    this.damage += 2;
     console.log(`${this.name} leveled up to level ${this.level}!`);
   }
 

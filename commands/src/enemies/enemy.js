@@ -1,10 +1,11 @@
 class Enemy {
-  constructor(name, health, damage, xpGain, enemyArmor) {
+  constructor(name, health, damage, xpGain, enemyArmor, enemySpeed) {
     this.name = name;
     this.health = health;
     this.damage = damage;
     this.xpGain = xpGain; 
     this.enemyArmor = enemyArmor;
+    this.enemySpeed= enemySpeed;
   }
 
   takeDamage(amount) {
@@ -47,6 +48,7 @@ class Floor {
       const enemyDamage = Math.floor(Math.random() * 10) + 10; // Random damage between 10 and 20
       const xpGain = Math.floor(Math.random() * 20) + 20; // Random XP gain between 20 and 40
       const enemyArmor = Math.floor(Math.random() * 5) + 1; // Random enemy armor between 1 and 5
+      const enemySpeed=Math.floor(Math.random() * 5) + 5; //Random enemy speed between 5 and 10
       const enemy = new Enemy(enemyName, enemyHealth, enemyDamage, xpGain, enemyArmor);
       this.enemies.push(enemy);
     }
